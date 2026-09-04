@@ -8,9 +8,13 @@ Source: Meta Ads API (Facebook Ads MCP). Google Ads was **not reachable** from t
 | Platform | Accounts visible | Auditable | Notes |
 |---|---|---|---|
 | Meta Ads | 2 | 1 | `REK Marketing & Design` (active). `SLP` is CLOSED and not queryable. |
-| Google Ads | 0 | 0 | Google Ads MCP is not connected to this session. No client search accounts, keywords, Quality Scores, or auction insights could be pulled. |
+| Google Ads | unknown | 0 | **Authentication failed.** The shared refresh token in the Drive copy of `google-ads.yaml` (folder `dave-ads-setup`, dated Sep 2) is rejected by Google's OAuth endpoint with `invalid_grant / Bad Request` on every attempt. No MCC account tree, campaigns, keywords, Quality Scores, or auction insights could be pulled. |
 
-**Coverage gap.** The audit brief asks for Quality Scores, keyword changes, negative keyword suggestions, and bid competition. Those are Google Ads concepts and require the Google Ads MCP (REK MCC login). Until that connector is enabled for the scheduled session, this routine can only cover Meta.
+**Coverage gap: Google Ads.** The read-only google-ads-mcp lives on Tom's Mac and is not reachable from the cloud session, so this run reproduced its path directly (google-ads Python client, MCC 656-695-7229 as `login_customer_id`, same yaml). Google refused the refresh token before any Ads API call was made. `invalid_grant` is deterministic and comes from Google, not the proxy. Causes in order of likelihood: the token was revoked (password change, OAuth app in Testing mode, or the 50-token-per-user cap), the Drive copy is stale relative to the token on the Mac and in Secret Manager, or the token was minted for a different OAuth client.
+
+**Why this is urgent.** The rek-daily-pipeline Cloud Run job, the Mac MCP, and Dave's setup all use one user refresh token. If Secret Manager holds the same token, the Mon/Wed/Fri pulls into `gsc_data.google_ads_*` are failing as well, and the dashboard, auction alerts, and monthly reports are going stale. Verify before the next 8am send.
+
+Once the token is replaced, this routine can run the full `/rek-adwords-audit` surface (Health Score, wasted spend, keyword health matrix, negatives, auction insights) for every client under the MCC. Note that auction insight competitor domains still need the Standard-access API application that is parked.
 
 ## Account status summary
 
@@ -19,7 +23,7 @@ Source: Meta Ads API (Facebook Ads MCP). Google Ads was **not reachable** from t
 | REK Marketing & Design — Orlando Prospecting | Meta | **Critical** | $50.29 | $56.00 ($8/day) | 90% | 0 | 3 → 0 | n/a (no leads) | 1 |
 | REK Marketing & Design — Philly Prospecting | Meta | On-target (paused) | $0.00 | $0.00 | n/a | 0 | 0 → 0 | n/a | 3 |
 | SLP | Meta | Closed | — | — | — | — | — | — | n/a |
-| All Google Ads clients | Google | **Unknown (not connected)** | — | — | — | — | — | — | 2 |
+| All Google Ads clients under MCC 656-695-7229 | Google | **Critical (API auth failed)** | — | — | — | — | — | — | 1 |
 
 ## Week-over-week: Orlando Prospecting (campaign 120249721176530223)
 
@@ -106,8 +110,8 @@ Activity log for Aug 27 – Sep 3 shows **no bid, budget, targeting, creative, o
 
 ## Prioritized weekly action plan
 
-1. **Critical: Orlando Prospecting has produced zero leads for 9 days on $50/week.** Today: check the Instant Form and lead sync. This week: ship 2–3 new creatives, exclude Instagram Feed, and either raise budget to $15–20/day or switch optimization to LEAD_GENERATION.
-2. **Needs attention: Google Ads is not connected to this routine.** Enable the Google Ads MCP (REK MCC login customer id) for the scheduled session so the next run can pull client search accounts, Quality Score, keyword changes, and auction insights. Without it, the "all managed PPC accounts" audit covers Meta only.
+1. **Critical: Google Ads API refresh token rejected (`invalid_grant`).** Today: run a quick GAQL query from the Mac MCP to confirm whether the local `~/google-ads.yaml` still authenticates, and open the latest rek-daily-pipeline Cloud Run execution log to see if it is failing with the same error. If the token is revoked, mint a new one (the account now requires a passkey for new tokens), then update Secret Manager, the Mac yaml, and the Drive copy in `dave-ads-setup`. Until then no Google Ads client account can be audited, and the warehouse tables may be stale.
+2. **Critical: Orlando Prospecting has produced zero leads for 9 days on $50/week.** Today: check the Instant Form and lead sync. This week: ship 2–3 new creatives, exclude Instagram Feed, and either raise budget to $15–20/day or switch optimization to LEAD_GENERATION.
 3. **Low: Philly Prospecting.** Paused, $0 spend, no action required. Launch or archive at your discretion.
 4. **Housekeeping:** three ads share the name `New Leads Ad`. Rename them by creative and date so activity logs and reports stay readable.
 
