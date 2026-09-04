@@ -87,12 +87,57 @@ as fact.
 - All Phase: TWO Ads accounts by design. 918-824-8896 (Joe's) holds the
   Jacksonville LSA, do not flag as duplicate/orphan; 103-111-7688 is the
   search home.
-- The Counseling Group (657-069-3617): real spend is ~$500/mo, one
-  Manual-CPC campaign; small numbers are normal.
+- The Counseling Group (657-069-3617): one Manual-CPC campaign. Budget is
+  $25/day since Aug 12, 2026 (raised from $18 when the Couples group
+  launched), which is ~$650/mo on a Mon-Fri schedule; $650 is on plan, not
+  an overspend. Clark confirmed the free 15-minute consultation on Aug 12,
+  so ad copy promising it is correct. The "Website Phone Click (tel tap)"
+  conversion action was created Aug 12; zeros before that date mean no tag
+  existed. Master Negatives = 114 after six couples/marriage negatives were
+  removed Aug 12. Mental-health client: Enhanced Conversions must stay OFF
+  (no BAA). Small numbers are normal.
+- Patio Style (596-555-8707): the client's primary conversion is Get
+  Directions to the showroom, then phone calls, then contact submissions.
+  Directions counted as primary is intended. Do not flag it.
+- Premium Walk-In Clinic (279-265-7852): as of Sep 4, 2026 it IS linked to
+  the MCC and spending ~$2,500/mo. A third party (powercouchmedia.com) edits
+  the account. Coordinate before suggesting changes.
 - Precision GPR (554-113-4760): under active cleanup since Aug 2026 (bids,
   negatives, conversion fix); expect deliberate week-over-week changes.
-- Premium Walk-In Clinic: not under the MCC (denied link Sep 2026);
-  absence expected.
+- Byers Fence (870-428-8862): under the MCC but REK does not manage its
+  PPC. Exclude it from scoring and deep dives.
+- Premium Medication Refills (722-095-3380): paused as of Sep 2026. Report
+  as paused; no change list until it restarts.
+- Scope (Tom, Sep 4, 2026): Local Services Ads campaigns and LSA-only
+  accounts (Citrus Landscape Solutions x3, Herrell Plumbing, Spectrum
+  Electric, Roeling Green Lawns, ABC Pressure Wash, Statewide Home
+  Remodeling) are out of scope for the weekly report until Tom says
+  otherwise. Search accounts only.
+
+## Audit hygiene (added Sep 4, 2026 after review)
+
+- Before calling a conversion action dead or "zero for N months", find out
+  when it was created (change history, or the Known account context above).
+  Report zeros only for the window the tag has existed.
+- Compare spend against budget x serving days, not against a remembered
+  monthly figure. A budget change explains most "overspend" flags.
+- Read change_event for the last 30 days before writing findings. REK
+  hand-work often explains what looks like an anomaly. Hand-work the API
+  cannot see belongs in Known account context.
+- Reconcile every "confirmed" dollar total against its line items before
+  the report goes out. Show the components.
+- Dedupe proposed negatives against the live shared lists
+  (shared_criterion) and campaign negatives. Say which proposals were
+  dropped as already present. Flag any standalone token that would block a
+  relevant query (example: "child" blocks "childhood trauma" for a
+  counseling practice).
+- Healthcare and mental-health clients: confirm Enhanced Conversions is
+  off. Check customer.conversion_tracking_setting
+  .enhanced_conversions_for_leads_enabled in the API and the per-action web
+  setting in the UI. No BAA from Google means it stays off. Reference:
+  TRACKING-privacy-checklist.md on the audit branch.
+- Ask what the client's primary conversion actually is before scoring
+  Conversion Tracking. A showroom's primary can be Get Directions.
 
 ## Cost discipline
 
