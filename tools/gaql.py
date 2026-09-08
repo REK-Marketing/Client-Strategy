@@ -27,7 +27,7 @@ def flatten(d, prefix=""):
 
 
 def run(customer_id, query):
-    client = GoogleAdsClient.load_from_storage(CFG, version="v21")
+    client = GoogleAdsClient.load_from_storage(CFG, version=os.environ.get("GOOGLE_ADS_API_VERSION", "v22"))
     svc = client.get_service("GoogleAdsService")
     rows = []
     stream = svc.search_stream(customer_id=str(customer_id).replace("-", ""), query=query)
