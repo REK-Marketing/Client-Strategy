@@ -1,15 +1,15 @@
 # PPC worklist - opened 2026-09-08
 
+Updated 2026-09-15: Premium Walk-In Clinic is no longer a client. Its items were removed.
+
 Every item below comes from the Sep 4 fleet audit and the Counseling Group deep dive, after Tom's review. The audits are read-only, so nothing on this list happens until someone applies it in Google Ads or Editor. Mark items done with the date. Next Monday's routine run reads change history and will confirm what landed.
 
-Owner key: REK = Tom or Dave in Ads Editor. Client = needs the client's answer or action. PCM = coordinate with Power Couch Media first.
+Owner key: REK = Tom or Dave in Ads Editor. Client = needs the client's answer or action.
 
 ## Priority 1: stops money leaking this week
 
 | # | Account | Item | Owner | Status |
 |---|---|---|---|---|
-| 1 | Premium Walk-In Clinic | Add the negative list from deep dive 2 (hospital systems, labs, free, addresses, uscis, kids). Pause the QS 1 keywords and "doctor near me today". | PCM | open |
-| 2 | Premium Walk-In Clinic | Add website call and form conversion actions so bidding sees more than ad calls. | PCM | open |
 | 3 | Patio Style | Pause the phrase brand keywords, keep exact only, switch Brand to Target Impression Share 90% absolute top with a $4 cap. | REK | open |
 | 4 | Patio Style | Pause "outdoor grill island" and "insulated patio cover" pending the client's answer on panels and grill islands. Add the panel and retail-brand negatives. | REK, then Client | open |
 | 5 | Precision GPR | Pause Location and DSA campaigns. Give "gpr scanning" one home. Cap GPR Scanning bids at $10. Add gprs, 811, price, rebar negatives. | REK | open |
@@ -37,14 +37,12 @@ Owner key: REK = Tom or Dave in Ads Editor. Client = needs the client's answer o
 | # | Account | Item | Owner | Status |
 |---|---|---|---|---|
 | 19 | Affordable Critter Solutions | Remove the 11 paused campaigns. Watch "nuisance wildlife removal". | REK | open |
-| 20 | Premium Walk-In Clinic | Settle who owns the account with Power Couch Media, and update the protocol context once known. | Tom | open |
 | 21 | Dave | Re-copy google-ads.yaml from Drive if his local copy predates Sep 8. | Dave | open |
 
 ## Client answers needed
 
 - Patio Style: do you sell insulated roof panels and grill islands as products, or only install finished covers and kitchens?
 - The Counseling Group: do the therapists use the Gottman method?
-- Premium Walk-In Clinic: are STD testing, immigration exams, and pediatric visits offered?
 - Roeling Green Lawns: is the LSA pause intended? (LSA is out of the weekly report, but this one is a paused revenue source.)
 
 ## Cadence from here

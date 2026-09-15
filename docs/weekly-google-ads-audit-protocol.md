@@ -99,9 +99,10 @@ as fact.
 - Patio Style (596-555-8707): the client's primary conversion is Get
   Directions to the showroom, then phone calls, then contact submissions.
   Directions counted as primary is intended. Do not flag it.
-- Premium Walk-In Clinic (279-265-7852): as of Sep 4, 2026 it IS linked to
-  the MCC and spending ~$2,500/mo. A third party (powercouchmedia.com) edits
-  the account. Coordinate before suggesting changes.
+- Premium Walk-In Clinic (279-265-7852): no longer a REK client as of
+  Sep 15, 2026. It may still appear under the MCC until the link is removed.
+  Exclude it from the fleet table, scoring, deep dives, and worklists. Do
+  not send it change suggestions.
 - Precision GPR (554-113-4760): under active cleanup since Aug 2026 (bids,
   negatives, conversion fix); expect deliberate week-over-week changes.
 - Byers Fence (870-428-8862): under the MCC but REK does not manage its
