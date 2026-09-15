@@ -100,9 +100,9 @@ as fact.
   Directions to the showroom, then phone calls, then contact submissions.
   Directions counted as primary is intended. Do not flag it.
 - Premium Walk-In Clinic (279-265-7852): no longer a REK client as of
-  Sep 15, 2026. It may still appear under the MCC until the link is removed.
-  Exclude it from the fleet table, scoring, deep dives, and worklists. Do
-  not send it change suggestions.
+  Sep 15, 2026, and already unlinked from the MCC (confirmed by the Sep 14
+  run). Its absence is expected, not a vanish alert. Exclude it from the
+  fleet table, scoring, deep dives, and worklists.
 - Precision GPR (554-113-4760): under active cleanup since Aug 2026 (bids,
   negatives, conversion fix); expect deliberate week-over-week changes.
 - Byers Fence (870-428-8862): under the MCC but REK does not manage its
