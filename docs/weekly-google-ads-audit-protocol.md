@@ -107,6 +107,10 @@ as fact.
   negatives, conversion fix); expect deliberate week-over-week changes.
 - Byers Fence (870-428-8862): under the MCC but REK does not manage its
   PPC. Exclude it from scoring and deep dives.
+- Herrell Plumbing (113-422-7395): REK runs the LSA only. The client
+  re-enabled its own two Smart campaigns on Sep 18 and 25, 2026
+  (herrellplumbing@gmail.com). Not REK-managed PPC; exclude from scoring,
+  deep dives, and the no-optimization reminder.
 - Premium Medication Refills (722-095-3380): paused as of Sep 2026. Report
   as paused; no change list until it restarts.
 - Scope (Tom, Sep 4, 2026): Local Services Ads campaigns and LSA-only
