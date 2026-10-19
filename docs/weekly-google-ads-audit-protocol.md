@@ -113,6 +113,18 @@ as fact.
   deep dives, and the no-optimization reminder.
 - Premium Medication Refills (722-095-3380): paused as of Sep 2026. Report
   as paused; no change list until it restarts.
+- Straightline Fence And Supply (550-094-8786): the search campaign
+  (disapproved for COMPROMISED_SITE in Sep 2026) was removed from the account;
+  as of the Oct 19, 2026 run only the LSA campaign remains. LSA-only, exclude
+  from scoring unless a search campaign reappears.
+- M&S Asphalt Paving (827-724-4095): Tom relaunched "Paving - Volusia" on
+  Sep 24, 2026 at $31/day, Manual CPC. Score it as a relaunch; small numbers
+  are expected for the first month.
+- New under the MCC in Oct 2026: Color Masters (426-092-9847, search,
+  REK-built), Quality Paralegal Services (447-153-2607, search, Tom active),
+  MB Skin Care (179-731-0831, LSA only), Color Masters LSA (163-445-9282) and
+  All Phase Pool Remodeling (Orlando LSA) (355-287-7099). Their presence is
+  expected, not a discovery alert.
 - Scope (Tom, Sep 4, 2026): Local Services Ads campaigns and LSA-only
   accounts (Citrus Landscape Solutions x3, Herrell Plumbing, Spectrum
   Electric, Roeling Green Lawns, ABC Pressure Wash, Statewide Home
