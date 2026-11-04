@@ -105,6 +105,9 @@ as fact.
   fleet table, scoring, deep dives, and worklists.
 - Precision GPR (554-113-4760): under active cleanup since Aug 2026 (bids,
   negatives, conversion fix); expect deliberate week-over-week changes.
+  Monthly PPC budget is $2,500 (Tom, Nov 4, 2026), about $82/day. Daily
+  budgets summed to $104/day on Nov 4 and October spent $3,163, so flag
+  any month over $2,500 as an overspend until the budgets are brought down.
 - Byers Fence (870-428-8862): under the MCC but REK does not manage its
   PPC. Exclude it from scoring and deep dives.
 - Herrell Plumbing (113-422-7395): REK runs the LSA only. The client
