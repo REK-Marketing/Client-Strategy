@@ -2,6 +2,8 @@
 """Tiny GAQL runner mirroring the read-only google-ads-mcp search tool.
 
 usage: gaql.py <customer_id> "<GAQL>" [--out file.json]
+
+API version defaults to v24 (google-ads 35.x no longer ships v22); override with GOOGLE_ADS_API_VERSION.
 Prints JSON rows (flattened, *_micros left as-is) to stdout or --out.
 """
 import json
@@ -27,7 +29,7 @@ def flatten(d, prefix=""):
 
 
 def run(customer_id, query):
-    client = GoogleAdsClient.load_from_storage(CFG, version=os.environ.get("GOOGLE_ADS_API_VERSION", "v22"))
+    client = GoogleAdsClient.load_from_storage(CFG, version=os.environ.get("GOOGLE_ADS_API_VERSION", "v24"))
     svc = client.get_service("GoogleAdsService")
     rows = []
     stream = svc.search_stream(customer_id=str(customer_id).replace("-", ""), query=query)
